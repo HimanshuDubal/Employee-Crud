@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <span>Employee Crud</span>
+  <span class="example-spacer"></span>
+  <button mat-fab extended (click)="openaddEditEmployee()" color="primary">Add Employee</button>
+</mat-toolbar>
+<table class="table table-hover table-stripted">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Education</th>
+      <th scope="col">company</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Package</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of emplist; track $index) {
+      <tr>
+        <td scope="row">{{emp.fnm}}</td>
+        <td scope="row">{{emp.lnm}}</td>
+        <td scope="row">{{emp.email}}</td>
+        <td scope="row">{{emp.dob}}</td>
+        <td scope="row">{{emp.education}}</td>
+        <td scope="row">{{emp.company}}</td>
+        <td scope="row">{{emp.exp}}</td>
+        <td scope="row">{{emp.pkg}}</td>   
+      </tr>
+    }
+  </tbody>
+</table>
+<router-outlet />
